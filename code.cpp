@@ -1,43 +1,22 @@
-#include <bits/stdc++.h>
-#define int long long int
-#define mod 1000000007
-#define f(i,a,b) for(int i=a;i<b;i++)
-#define rf(i,a,b) for(int i=a;i>=b;i--)
-#define rep(i,n) f(i,0,n)
-#define rrep(i,n) rf(i,n-1,0)
-#define w(t) int t; cin>>t; while(t--)
-#define vi vector<int>
-#define mp make_pair
-#define pb push_back
-#define ff first
-#define ss second
-#define mii map<int,int>
-#define mci map<char,int>
-using namespace std;
-
-void fast_IO_file()
-{
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-#ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
-#endif
-}
-
-int32_t main()
-{
-	fast_IO_file();
-	string s;
-	cin >> s;
-
-	string a = "0000000", b = "1111111";
-
-	if (s.find(a) != string::npos || s.find(b) != string::npos)
-		cout << "YES" << "\n";
-	else
-		cout << "NO" << "\n";
-
-
-	return 0;
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+void fillPrefixSum(int arr[], int n, int prefixSum[]) 
+{ 
+    prefixSum[0] = arr[0]; 
+  
+ 
+    for (int i = 1; i < n; i++) 
+        prefixSum[i] = prefixSum[i - 1] + arr[i]; 
+} 
+  
+int main() 
+{ 
+    int arr[] = { 10, 4, 16, 20 }; 
+    int n = sizeof(arr) / sizeof(arr[0]); 
+    int prefixSum[n]; 
+  
+    fillPrefixSum(arr, n, prefixSum); 
+    for (int i = 0; i < n; i++) 
+        cout << prefixSum[i] << " "; 
 }
