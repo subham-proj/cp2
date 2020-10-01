@@ -26,6 +26,4 @@ class Prefix {
 			System.out.print(prefixSum[i] + " "); 
 		System.out.println(""); 
 	} 
-} 
-
-// This Code is Contributed by Saket Kumar 
+}  
